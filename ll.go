@@ -14,13 +14,6 @@ type LinkedList struct {
     head *node
 }
 
-func (ll *LinkedList) AddToHead(data int) bool {
-    tmp := &node{data:data}
-    if ll.head == nil {
-        ll.head = tmp
-    } else {
-        tmp.next = ll.head
-        ll.head = tmp
-    }
-    return true
+func (ll *LinkedList) AddToHead(data int) {
+    ll.head = &node{data:data, next:ll.head}
 }
